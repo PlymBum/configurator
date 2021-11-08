@@ -1,0 +1,9 @@
+.server_cart {
+    display: grid;
+    width: 300px;
+    weight : 300px;
+    border: 2px solid black;
+    margin: 35px;
+    text-align: center;
+
+}
