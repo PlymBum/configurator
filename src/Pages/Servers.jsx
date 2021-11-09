@@ -28,30 +28,34 @@ const Servers = () => {
         selector: {
             name: {$exists: true}
         },
-        fields: ['name', '_id'],
-        limit: 5
+        fields: ['name', '_id','image_url'],
+        limit: 10
     }, (err, result) => {
         if (err) {
             return console.log(err)
         }
-        setServers(result.docs)
-        //console.log(allServers)
+        setServers((prev)=>[...prev,...result.docs])
+
     })
+
 
     useEffect(() => {
         getModels()
-        console.log("useEffect")
+        //console.log("useEffect")
     }, [])
 
 
-    //console.log('этот-' + allServers)
+    console.log(allServers)
     //allServers.map(el=>console.log(el))
 
 
     return (
         <div className={styles.content}>
 
-            {allServers.map(el => <ServerItem key={el._id} name={el.name}  callback={()=>navigate('/servers/'+el._id)}/>)}
+            {allServers.map(el =>
+                <ServerItem key={el._id} name={el.name} img={el.image_url}
+                            callback={()=>navigate('/servers/'+el._id)}
+                />)}
         </div>
     );
 }

@@ -1,7 +1,7 @@
 import './App.css';
-import MyInput from './components/myInput/MyInput';
+//import MyInput from './components/myInput/MyInput';
 import Servers from "./Pages/Servers";
-import {BrowserRouter, Route, Router, Routes} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Server from "./Pages/Server";
 
 

@@ -11,7 +11,7 @@ const ServerItem  = (props) => {
                 <h5>{props.name}</h5>
             </div>
             <div>
-
+                <img src={props.img}/>
             </div>
         </div>
     );
